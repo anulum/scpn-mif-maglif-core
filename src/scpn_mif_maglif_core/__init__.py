@@ -48,6 +48,13 @@ from scpn_mif_maglif_core.observability import (
     plan_from_record,
 )
 from scpn_mif_maglif_core.parameters import Liner, ThreeStageDrive
+from scpn_mif_maglif_core.plan_envelope import (
+    PlanEnvelope,
+    envelope_for_plan,
+    envelope_from_bytes,
+    envelope_from_record,
+    verify_envelope,
+)
 
 __version__: Final = "0.1.0.dev0"
 
@@ -69,12 +76,17 @@ __all__ = [
     "Liner",
     "ObservabilityBinding",
     "ObservabilityClass",
+    "PlanEnvelope",
     "RegistryBinding",
     "SemanticCarrier",
     "ThreeStageDrive",
     "__version__",
     "configuration_from_bytes",
     "configuration_from_record",
+    "envelope_for_plan",
+    "envelope_from_bytes",
+    "envelope_from_record",
     "plan_from_bytes",
     "plan_from_record",
+    "verify_envelope",
 ]

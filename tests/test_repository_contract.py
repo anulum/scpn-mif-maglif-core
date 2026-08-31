@@ -62,6 +62,8 @@ REQUIRED_PATHS = (
     "src/scpn_mif_maglif_core/configuration.py",
     "src/scpn_mif_maglif_core/errors.py",
     "src/scpn_mif_maglif_core/observability.py",
+    "src/scpn_mif_maglif_core/plan_envelope.py",
+    "tests/data/plan_envelope_fixture.json",
     "src/scpn_mif_maglif_core/parameters.py",
     "studio/portfolio-descriptor.json",
     "studio/portfolio-descriptor.schema.json",
