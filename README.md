@@ -8,6 +8,11 @@ Contact: www.anulum.li | protoscience@anulum.li
 SCPN MIF MagLIF Core — README
 -->
 
+<div align="center">
+  <img src="docs/assets/repo_header.png"
+       alt="SCPN MIF MagLIF Core — Three Stages That Define The Class">
+</div>
+
 # SCPN MIF MagLIF Core
 
 Governed device-family repository for magnetised liner inertial fusion
