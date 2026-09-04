@@ -9,6 +9,11 @@
       "evidence_maturity": "computational_prototype",
       "evidence_pointer": "VALIDATION.md#diagnostic-and-clock-semantics",
       "identifier": "diagnostic_clock_semantics"
+    },
+    {
+      "evidence_maturity": "computational_prototype",
+      "evidence_pointer": "VALIDATION.md#level-0-device-physics",
+      "identifier": "level0_device_physics"
     }
   ],
   "claims": [],
@@ -66,6 +71,15 @@
   "fusion_solver_seams": {
     "active": [],
     "policy": "Versioned seams from SCPN-FUSION-CORE may be consumed only after the reactor family migration gate proves exact replacement; no solver code is copied into this repository."
+  },
+  "kernel_library": {
+    "distribution": "scpn-reactor-kernels",
+    "inventory_sha256": "9c43405ec5a184b813171f29ac0fc1a44eb0860777de9b08e65cd4a7554abb57",
+    "kernels": [
+      "numerics_transcendental"
+    ],
+    "source_commit": "d9db5a425ae744bf60659edc7a1c3dda16bb1802",
+    "version": "0.1.0.dev0"
   },
   "license": "AGPL-3.0-or-later",
   "machine_protection": {

@@ -201,3 +201,62 @@ gate:
   domain (`clk_facility` root, `clk_shot` member); multi-domain rules
   are exercised by test-constructed plans. Scopes are declarations;
   `mapping_state` stays `unmapped`.
+
+## Level-0 device physics
+
+Evidence record of the `level0_device_physics` capability
+(`computational_prototype`; design record: `docs/adr/0005-level0-device-physics.md`).
+
+What is exercised, all under the 100 % statement-and-branch coverage gate:
+
+- **The three stages, expressed mechanically.** The azimuthal field the
+  axial current puts at the liner surface, `mu0 I / 2 pi r`, and its
+  magnetic pressure; the liner's mass, measured from the outside in
+  because that is how this family declares a liner, and its implosion
+  kinetic energy at a declared velocity; and the preheat energy deposited
+  divided by the fuel volume the bore encloses. The field is checked to
+  fall as one over the radius, not merely to be computed.
+- **Stagnation.** Axial flux conservation `B_z (r_0/r)^2` and adiabatic
+  compression `(r_0/r)^(2(gamma-1))`, both ideal limits recorded as upper
+  bounds. The non-integer power goes through the shared library's
+  deterministic kernel and a test asserts the two are the same call.
+- Every refusal branch: a current, radius, field, wall, length or density
+  that is zero, negative, infinite or not-a-number; a wall that leaves no
+  bore; a convergence ratio that does not converge, checked on **all
+  three** compression relations; and an adiabatic index that would not
+  heat.
+- Canonical serialisation, digest identity and stability, digest movement
+  when the declared convergence moves, and the two halves of the record
+  agreeing on the radius the compression starts from.
+
+Anchoring — every configuration field is a printed value:
+
+- **Printed** by the filed chapter SAND2021-3239B: the liner is 10 mm
+  tall, 5 mm in outer diameter and 0.5 mm in wall; the first integrated
+  experiment used a 10 T axial field, 0.5 kJ of deposited preheat and
+  18 MA of peak load current. All six reach the composed record, and the
+  test reads them out of it.
+- The aspect ratio those two printed liner numbers give is **exactly
+  5.0**, asserted as an equality: the outer radius is half the printed
+  diameter and both operands and the quotient are exactly representable.
+- **Printed as a range, not a value**: the peak implosion velocity, 70 to
+  100 kilometres per second. A value is declared from inside it and a
+  separate test asserts it is inside.
+- **Declared, and said to be declared**: the liner material density, the
+  convergence ratio and the adiabatic index.
+- **The filed source is a RELATED public chapter**, not the cited
+  Phys. Plasmas 17 (2010) 056303, which is behind a subscription and is
+  not on file. Nothing here implies the cited paper was read.
+
+Bounded claims — what is NOT claimed:
+
+- No equation of motion, equation of state or transport equation is
+  solved.
+- The compressed axial field is the perfect-conductor limit and the
+  compressed temperature the loss-free limit; both are upper bounds, never
+  predictions.
+- The drive field is the vacuum field of an axial current at the liner
+  surface. No circuit, no current distribution and no instability is
+  modelled.
+- No yield, gain, reactivity, confinement or breakeven statement is made,
+  and no value describes or validates a real machine.

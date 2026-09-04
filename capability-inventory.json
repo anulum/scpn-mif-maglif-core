@@ -9,16 +9,21 @@
       "evidence_maturity": "computational_prototype",
       "evidence_pointer": "VALIDATION.md#diagnostic-and-clock-semantics",
       "identifier": "diagnostic_clock_semantics"
+    },
+    {
+      "evidence_maturity": "computational_prototype",
+      "evidence_pointer": "VALIDATION.md#level-0-device-physics",
+      "identifier": "level0_device_physics"
     }
   ],
   "claims": [],
   "evidence_maturity": "computational_prototype",
-  "implemented_capability_count": 2,
+  "implemented_capability_count": 3,
   "project": "SCPN-MIF-MAGLIF-CORE",
   "schema": "scpn.capability-inventory.v1",
   "schema_version": "1.0.0",
   "source": {
     "manifest_path": "reactor-domain.json",
-    "manifest_sha256": "7f27182b3f555a084476434215f49a3c185a0706e2a23cc20a02a702e0233199"
+    "manifest_sha256": "18622db3c114655c4c18d9ca03989697399d52737bdb038fabf428fc8e983e28"
   }
 }

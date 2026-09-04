@@ -51,6 +51,18 @@ from scpn_mif_maglif_core.observability import (
     plan_from_record,
 )
 from scpn_mif_maglif_core.parameters import Liner, ThreeStageDrive
+from scpn_mif_maglif_core.physics import (
+    LEVEL0_NON_CLAIMS,
+    LEVEL0_SCHEMA,
+    LEVEL0_SCHEMA_VERSION,
+    DriveInputs,
+    DriveState,
+    Level0Physics,
+    StagnationState,
+    drive_state,
+    level0_physics,
+    stagnation_state,
+)
 from scpn_mif_maglif_core.plan_envelope import (
     PlanEnvelope,
     envelope_for_plan,
@@ -64,6 +76,9 @@ __version__: Final = "0.1.0.dev0"
 __all__ = [
     "APPLICABLE_CANDIDATES",
     "CATALOGUE_BINDING",
+    "LEVEL0_NON_CLAIMS",
+    "LEVEL0_SCHEMA",
+    "LEVEL0_SCHEMA_VERSION",
     "LINER_ASPECT_RATIO_WINDOW",
     "OWNED_CONFIGURATIONS",
     "CandidateProfile",
@@ -77,7 +92,10 @@ __all__ = [
     "DiagnosticChannelPlan",
     "DiagnosticPlan",
     "DiagnosticPlanError",
+    "DriveInputs",
+    "DriveState",
     "FrameKind",
+    "Level0Physics",
     "Liner",
     "ObservabilityBinding",
     "ObservabilityClass",
@@ -85,14 +103,18 @@ __all__ = [
     "ReferenceFrame",
     "RegistryBinding",
     "SemanticCarrier",
+    "StagnationState",
     "ThreeStageDrive",
     "__version__",
     "configuration_from_bytes",
     "configuration_from_record",
+    "drive_state",
     "envelope_for_plan",
     "envelope_from_bytes",
     "envelope_from_record",
+    "level0_physics",
     "plan_from_bytes",
     "plan_from_record",
+    "stagnation_state",
     "verify_envelope",
 ]
