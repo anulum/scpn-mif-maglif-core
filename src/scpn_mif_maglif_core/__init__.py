@@ -31,7 +31,20 @@ from scpn_mif_maglif_core.configuration import (
     configuration_from_bytes,
     configuration_from_record,
 )
-from scpn_mif_maglif_core.errors import DeviceConfigurationError, DiagnosticPlanError
+from scpn_mif_maglif_core.errors import (
+    DeviceConfigurationError,
+    DeviceGeometryError,
+    DiagnosticPlanError,
+)
+from scpn_mif_maglif_core.geometry import (
+    BODY_NAMES,
+    DeviceGeometry,
+    DeviceModel3D,
+    DeviceModelCAD,
+    build_device_cad,
+    build_device_model,
+    geometry_from_record,
+)
 from scpn_mif_maglif_core.observability import (
     APPLICABLE_CANDIDATES,
     CATALOGUE_BINDING,
@@ -75,6 +88,7 @@ __version__: Final = "0.1.0.dev0"
 
 __all__ = [
     "APPLICABLE_CANDIDATES",
+    "BODY_NAMES",
     "CATALOGUE_BINDING",
     "LEVEL0_NON_CLAIMS",
     "LEVEL0_SCHEMA",
@@ -89,6 +103,10 @@ __all__ = [
     "DeferredCandidate",
     "DeviceConfiguration",
     "DeviceConfigurationError",
+    "DeviceGeometry",
+    "DeviceGeometryError",
+    "DeviceModel3D",
+    "DeviceModelCAD",
     "DiagnosticChannelPlan",
     "DiagnosticPlan",
     "DiagnosticPlanError",
@@ -106,12 +124,15 @@ __all__ = [
     "StagnationState",
     "ThreeStageDrive",
     "__version__",
+    "build_device_cad",
+    "build_device_model",
     "configuration_from_bytes",
     "configuration_from_record",
     "drive_state",
     "envelope_for_plan",
     "envelope_from_bytes",
     "envelope_from_record",
+    "geometry_from_record",
     "level0_physics",
     "plan_from_bytes",
     "plan_from_record",

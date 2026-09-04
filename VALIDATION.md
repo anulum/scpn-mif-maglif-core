@@ -260,3 +260,75 @@ Bounded claims — what is NOT claimed:
   modelled.
 - No yield, gain, reactivity, confinement or breakeven statement is made,
   and no value describes or validates a real machine.
+
+## Device 3D model
+
+Evidence record of the `device_3d_model` capability
+(`computational_prototype`; design record: `docs/adr/0006-device-3d-and-cad-models.md`).
+
+What is exercised, all under the 100 % statement-and-branch coverage gate:
+
+- **Five bodies in a fixed order**, one per stage of the family: the fuel
+  column, the liner shell, the laser entrance window and the
+  Helmholtz-like coil pair. The fuel sits in the bore, the coils clear the
+  liner, the window caps the bore at one end only, and the pair is
+  symmetric about the midplane.
+- **The Helmholtz ratio is reported, never imposed.** The source says
+  Helmholtz-*like*; the anchor declares a pair at the condition and a test
+  asserts the ratio is exactly one, while the synthetic reference sits
+  away from it and is accepted. Turning a qualified word into an invariant
+  would invent a constraint the source did not state.
+- **Two collisions refused**, each naming both fields: a coil bore that
+  does not clear the liner, and a coil pair longer than its separation.
+- **The geometry and the physics describe one liner**: the tier-G1 liner
+  volume divided by the physics capability's liner mass over its density
+  is the inscribed-polygon ratio of the segment count, at 8, 64 and 512.
+- Every envelope field refused when zero, negative, infinite or
+  not-a-number; unknown key, missing field and wrong type refused,
+  booleans included; canonical serialisation, digest identity, both input
+  digests bound in, and a body set out of order refused at construction.
+
+Anchoring — what is printed and what is declared:
+
+- **Printed** and recovered from the built bodies: the liner's outer
+  radius `2.5 mm` and bore `2.0 mm` as vertex coordinates of the liner
+  mesh, and its length `10 mm` as the mesh's bounding-box extent.
+- **Declared, and said to be declared**: the entrance window thickness and
+  every coil dimension. The chapter names those parts without dimensioning
+  them.
+
+## Device CAD model
+
+Evidence record of the `device_cad_model` capability
+(`computational_prototype`; same design record).
+
+What is exercised:
+
+- The same five bodies as exact solids, each checked fail-closed by the
+  library's evidence kernel against its analytic closed forms, its chord
+  deficit bound and its tier-G1 twin. Every body is a cylinder or a tube,
+  so each has a well-defined smallest circular radius.
+- **The deflection is set from the scale of this family, not copied.** A
+  MagLIF bore is two millimetres where the liner family's is two hundred
+  and the deficit bound is `2 d / r`, so the liner family's `1e-4` would
+  make the guarantee ten per cent here. This tier declares `1e-5` and a
+  test asserts every body's bound stays under two per cent.
+- The cost of that was measured: about ten seconds a build against about
+  five at the coarser deflection. The test module builds the reference
+  once and caches it, which is where the cost actually was.
+- Canonical record, pinned digest in the pinned back-end environment,
+  determinism across two builds, normalised STEP bytes whose digest is the
+  digest of the exported file, and refusals for a manifest of the wrong
+  schema or body count, bodies out of order, an invalid deflection and an
+  envelope that does not fit.
+
+Bounded claims — what is NOT claimed:
+
+- The geometry is the state **before** the implosion; no body moves.
+- The coils are rings of declared size. No winding, turn count, circuit or
+  field map is modelled — a pair of rings in a static model is not a
+  magnet.
+- STEP determinism is claimed inside one pinned back-end environment only.
+- No engineering model, material property, load, field, neutronic quantity
+  or fabrication tolerance is carried, and no value describes or validates
+  a real machine.

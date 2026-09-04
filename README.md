@@ -22,7 +22,7 @@ configuration of the SCPN Phase Orchestrator reactor registry (magnetized
 cylindrical liner).
 
 **Evidence maturity: `computational_prototype`** (per-capability; ADR 0002).
-Three capabilities are implemented: the device configuration model —
+Five capabilities are implemented: the device configuration model —
 validated parameter objects with documented consistency estimates,
 canonical serialisation, and a data-only SPO registry pin
 (evidence: `VALIDATION.md#device-configuration-model`) — and the
@@ -34,7 +34,11 @@ physics — the three stages of the drive expressed mechanically and what
 the convergence does to the magnetised fuel, both compressions recorded as
 upper bounds, on an operating point every number of which a filed public
 chapter prints (ADR 0005, evidence:
-`VALIDATION.md#level-0-device-physics`). No parameter set or
+`VALIDATION.md#level-0-device-physics`); and the device model at both
+tiers — the fuel column, the liner, the laser entrance window and the
+Helmholtz-like coil pair, one body per stage of the drive (ADR 0006,
+evidence: `VALIDATION.md#device-3d-model` and
+`VALIDATION.md#device-cad-model`). No parameter set or
 channel describes any real machine or diagnostic; the claim inventory
 is empty and verified by the domain validator.
 

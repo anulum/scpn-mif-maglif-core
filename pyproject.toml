@@ -27,6 +27,13 @@ dependencies = [
     "scpn-reactor-kernels @ git+https://github.com/anulum/scpn-reactor-kernels.git@d9db5a425ae744bf60659edc7a1c3dda16bb1802",
 ]
 
+# The tier-G2 CAD model is an optional capability, not a runtime
+# requirement: every other capability works without a B-rep back-end, and
+# declaring the extra as a hard dependency would pull a ~1 GB back-end into
+# every environment. It names the same commit.
+[project.optional-dependencies]
+cad = ["scpn-reactor-kernels[cad] @ git+https://github.com/anulum/scpn-reactor-kernels.git@d9db5a425ae744bf60659edc7a1c3dda16bb1802"]
+
 [tool.setuptools.dynamic]
 version = { attr = "scpn_mif_maglif_core.__version__" }
 
