@@ -53,7 +53,7 @@ TITLE_METRICS: list[tuple[str, str]] = [
     ("Device Configuration", "maglif · magnetised cylindrical liner"),
     ("Hard Invariants", "premagnetisation + laser preheat"),
     ("Reference", "Slutz et al., PoP 17 (2010) 056303"),
-    ("Aspect Ratio", "outside design window flagged"),
+    ("Aspect Ratio", "outside declared window flagged"),
     ("Plan Envelope", "v1.1.0 · synthetic · review-only"),
     ("Quality Gates", "100% branch cov · mypy --strict"),
 ]
@@ -539,7 +539,7 @@ def generate_aspect_window() -> None:
     ax.text(
         6.4,
         (y_low + y_high) / 2,
-        "documented design window",
+        "declared design window",
         color=GREEN,
         fontsize=8.5,
         fontfamily="monospace",
@@ -587,7 +587,7 @@ def generate_aspect_window() -> None:
     ax.text(
         5.0,
         0.75,
-        "declared liner geometry checked against the documented window",
+        "declared liner geometry checked against the declared window",
         color="#445566",
         fontsize=8,
         fontfamily="monospace",
