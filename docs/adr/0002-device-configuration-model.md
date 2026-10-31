@@ -41,8 +41,11 @@ family pilot.
    fusion (S. A. Slutz et al., Phys. Plasmas 17 (2010) 056303).
 4. Derived quantity: the liner aspect ratio ``AR = R / dR``. Advisory
    finding, reported by `consistency_report()` and never clamped: an
-   aspect ratio outside the documented ``[3, 9]`` window around the
-   baseline design point (Slutz et al. 2010, baseline AR = 6).
+   aspect ratio outside the declared ``[3, 9]`` window. The window is
+   a modelling choice. The abstract of Slutz et al. 2010 (read on its
+   Crossref record; the article is not on file) asks for a wall of
+   10–20 % of the radius, AR 5 to 10. An earlier "baseline AR = 6"
+   credit was removed on 2026-10-31 because no read source prints it.
 5. Repository-level `evidence_maturity` = the highest state claimed by
    any capability entry; per-capability states are the authoritative
    claim surface.

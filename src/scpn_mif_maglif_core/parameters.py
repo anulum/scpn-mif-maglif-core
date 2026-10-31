@@ -9,8 +9,10 @@
 """Validated parameter objects of a MagLIF configuration.
 
 The derived quantity implements one standard design measure and nothing
-more: the liner aspect ratio ``AR = R / dR`` (S. A. Slutz et al., Phys.
-Plasmas 17 (2010) 056303, baseline AR = 6). It is a rough consistency
+more: the liner aspect ratio ``AR = R / dR``. The abstract of S. A. Slutz
+et al., Phys. Plasmas 17 (2010) 056303 (read on its Crossref record; the
+article is not on file) asks for a liner wall of 10-20 % of the radius,
+that is AR 5 to 10; no baseline value is read. It is a rough consistency
 instrument with documented applicability bounds; no claim about any real
 machine follows from it.
 """

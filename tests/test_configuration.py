@@ -79,7 +79,7 @@ def test_consistency_report_clean_and_finding() -> None:
     thin = synthetic_configuration(wall_thickness_mm=0.2)
     findings = thin.consistency_report()
     assert len(findings) == 1
-    assert "design window" in findings[0].message
+    assert "declared design window" in findings[0].message
 
 
 def test_canonical_round_trip_and_digest() -> None:

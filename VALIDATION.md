@@ -84,8 +84,12 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
   al., Phys. Plasmas 17 (2010) 056303) — every rejection branch is
   tested.
 - The liner aspect ratio `AR = R / dR` as a documented derived
-  quantity, with an advisory finding outside the documented `[3, 9]`
-  design window (baseline AR = 6), reported and never clamped.
+  quantity, with an advisory finding outside the declared `[3, 9]`
+  design window, reported and never clamped. The window is a modelling
+  choice; the abstract of Slutz et al. 2010 (Crossref record; article
+  not on file) gives a wall of 10–20 % of the radius, AR 5 to 10. The
+  earlier "baseline AR = 6" credit was removed on 2026-10-31: no read
+  source prints it.
 - Canonical serialisation (sorted keys, NaN/infinity rejected on both
   emit and parse), SHA-256 digest identity, and a strict round-trip
   parser that refuses unknown fields.

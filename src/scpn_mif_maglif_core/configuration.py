@@ -12,7 +12,7 @@ A :class:`DeviceConfiguration` composes a validated liner and
 three-stage drive under the single registry identifier this repository
 owns. Premagnetisation and laser preheat are hard invariants (the
 defining MagLIF stages; Slutz et al., PoP 17 (2010) 056303); a liner
-aspect ratio outside the documented design window is flagged.
+aspect ratio outside the declared design window is flagged.
 Serialisation is canonical (sorted keys, no NaN or infinity accepted
 anywhere) and the SHA-256 digest of those bytes identifies the exact
 parameter set. The registry binding is a data pin only — this package
@@ -136,7 +136,7 @@ class DeviceConfiguration:
         -------
         tuple of ConsistencyFinding
             Advisory findings from the documented estimates; empty when
-            the liner aspect ratio sits in the documented design
+            the liner aspect ratio sits in the declared design
             window. Findings are advisory instruments, not machine
             claims.
         """
@@ -149,7 +149,7 @@ class DeviceConfiguration:
                     field="liner.wall_thickness_mm",
                     message=(
                         f"liner aspect ratio {ratio:.2f} is outside the "
-                        f"documented design window [{low:.0f}, {high:.0f}]"
+                        f"declared design window [{low:.0f}, {high:.0f}]"
                     ),
                 )
             )
