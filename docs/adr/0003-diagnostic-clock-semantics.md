@@ -51,7 +51,7 @@ bind. Four candidates apply to the configuration this repository owns: `magneto_
 4. Timing is fail-closed where physics fixes the bound: the Nyquist
    criterion for cyclic channels, a positive event-timing bound, and
    clock resolution at or below that bound. The device-typical checks
-   are advisory only: the ~100 ns liner-implosion asymmetry range 1–1000 MHz and the sub-ns liner-arrival timing (S. A. Slutz et al., Phys. Plasmas 17 (2010) 056303).
+   are advisory only: the declared liner-asymmetry design band 1–1000 MHz and the sub-ns arrival-timing design bound — synthetic bounds for ~100 ns implosions, not values from a source (the filed related chapter SAND2021-3239B gives the ~100 ns time scale, PDF p. 9, but prints neither; S. A. Slutz et al., Phys. Plasmas 17 (2010) 056303, is not on file).
 5. The reference plan mirrors canonical practice with synthetic
    declarations: a liner-arrival event train (event relative against the pulsed-power store trigger), a compression-trajectory set (noncyclic), a liner-asymmetry mode set (derived cyclic against the facility clock), and the model-owned synthetic oscillator (simulation clock). Every applicable candidate must be
    planned or explicitly deferred with a reason; every channel is

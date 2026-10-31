@@ -119,6 +119,12 @@ SCPN MIF MagLIF Core — CHANGELOG
 
 ### Changed
 
+- The advisory liner-asymmetry band (1–1000 MHz), the sub-ns arrival-timing
+  bound and the ~1 µs shot-duration bound are described as declared design
+  bounds in the findings, VALIDATION and ADR 0003. They were attributed to
+  Slutz et al. 2010, which is not on file; the filed related chapter gives
+  the ~100 ns implosion time scale but prints none of the three.
+
 - The anchor values are bound to pages of the filed SAND2021-3239B PDF
   (target and velocity range on p. 9, operating point on p. 10).
 - The physical constants of the drive model name their editions: the vacuum

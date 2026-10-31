@@ -380,9 +380,9 @@ class DiagnosticPlan:
                         message=(
                             "declared liner-asymmetry band "
                             f"{channel.max_signal_frequency_hz:.1f} "
-                            "Hz is outside the ~100 ns liner "
-                            "implosion asymmetry range 1-1000 MHz "
-                            "(Slutz 2010)"
+                            "Hz is outside the declared liner-asymmetry "
+                            "design band 1-1000 MHz (a synthetic bound for "
+                            "~100 ns implosions, SAND2021-3239B)"
                         ),
                     )
                 )
@@ -396,9 +396,9 @@ class DiagnosticPlan:
                         field=f"channels[{channel.identifier}].timing_uncertainty_s",
                         message=(
                             f"timing uncertainty {channel.timing_uncertainty_s:.2e} s"
-                            " is coarser than the sub-ns "
-                            "liner-arrival timing on ~100 ns "
-                            "implosions (Slutz 2010)"
+                            " is coarser than the declared sub-ns "
+                            "arrival-timing design bound for ~100 ns "
+                            "implosions (SAND2021-3239B)"
                         ),
                     )
                 )
@@ -409,8 +409,8 @@ class DiagnosticPlan:
                         message=(
                             "acquisition window "
                             f"{channel.acquisition_duration_s:.2e} s is "
-                            "longer than the MagLIF implosion scale of up to ~1 "
-                            "us (Slutz 2010)"
+                            "longer than the declared ~1 us shot-duration "
+                            "bound for ~100 ns implosions (SAND2021-3239B)"
                         ),
                     )
                 )

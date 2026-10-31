@@ -121,7 +121,7 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
 - A reference plan mirroring canonical practice with synthetic
   declarations: liner-arrival train, compression trajectory, liner-asymmetry set, synthetic oscillator, each bound to its clock domain.
 - Documented advisory band and timing checks with their sources stated
-  in the code: liner-asymmetry bands of 1–1000 MHz and sub-ns arrival timing (Slutz 2010); findings are reported, never clamped.
+  in the code: the declared liner-asymmetry design band 1–1000 MHz, sub-ns arrival-timing design bound and ~1 µs shot-duration bound — synthetic bounds; the filed related chapter SAND2021-3239B gives the ~100 ns implosion time scale (PDF p. 9) but prints none of the three, and the cited Slutz 2010 paper is not on file; findings are reported, never clamped.
 - Canonical serialisation (sorted keys, NaN/infinity rejected on both
   emit and parse), SHA-256 digest identity, and a strict round-trip
   parser that refuses unknown fields.
