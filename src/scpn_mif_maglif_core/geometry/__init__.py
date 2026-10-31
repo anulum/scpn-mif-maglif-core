@@ -29,7 +29,7 @@ from scpn_mif_maglif_core.geometry.cad import (
 )
 from scpn_mif_maglif_core.geometry.device import (
     GEOMETRY_FIELDS,
-    MM_PER_M,
+    M_PER_MM,
     DeviceGeometry,
     geometry_from_record,
 )
@@ -53,11 +53,11 @@ __all__ = [
     "DEFAULT_LINEAR_DEFLECTION_M",
     "DEFAULT_REFERENCE_MESH_SEGMENTS",
     "GEOMETRY_FIELDS",
-    "MM_PER_M",
     "MODEL_NON_CLAIMS",
     "MODEL_SCHEMA",
     "MODEL_SCHEMA_VERSION",
     "MODEL_UNITS",
+    "M_PER_MM",
     "DeviceGeometry",
     "DeviceModel3D",
     "DeviceModelCAD",

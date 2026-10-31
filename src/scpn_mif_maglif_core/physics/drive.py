@@ -44,15 +44,20 @@ from scpn_mif_maglif_core.configuration import DeviceConfiguration
 from scpn_mif_maglif_core.errors import DeviceConfigurationError
 from scpn_mif_maglif_core.parameters import require_positive
 
-#: Vacuum permeability, SI, CODATA.
+#: Vacuum permeability in N A^-2, the CODATA 2018 recommended value
+#: (1.256 637 062 12e-6). CODATA 2022 gives 1.256 637 061 27e-6; this value
+#: is 6.8e-10 higher relative to it.
 MU0: Final = 1.25663706212e-6
-#: Density of beryllium, the material MagLIF liners are usually made of.
+#: Density of beryllium in kilograms per cubic metre, declared; the material
+#: MagLIF liners are usually made of. The filed chapter names beryllium
+#: liners but prints no density.
 BERYLLIUM_DENSITY_KG_M3: Final = 1850.0
-#: Density of aluminium, the other liner material in common use.
+#: Density of aluminium in kilograms per cubic metre, declared; the other
+#: liner material in common use. No anchor depends on it.
 ALUMINIUM_DENSITY_KG_M3: Final = 2700.0
 #: Metres per millimetre; the configuration is in millimetres and every
 #: relation here is SI.
-MM_PER_M: Final = 1.0e-3
+M_PER_MM: Final = 1.0e-3
 
 
 @dataclass(frozen=True, slots=True)
@@ -283,9 +288,9 @@ def drive_state(configuration: DeviceConfiguration, inputs: DriveInputs) -> Driv
     """
     liner = configuration.liner
     drive = configuration.drive
-    outer = liner.outer_radius_mm * MM_PER_M
-    wall = liner.wall_thickness_mm * MM_PER_M
-    length = liner.length_mm * MM_PER_M
+    outer = liner.outer_radius_mm * M_PER_MM
+    wall = liner.wall_thickness_mm * M_PER_MM
+    length = liner.length_mm * M_PER_MM
     bore = outer - wall
     current = drive.peak_current_ma * 1.0e6
     velocity = inputs.implosion_velocity_km_s * 1.0e3

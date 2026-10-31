@@ -40,7 +40,7 @@ from scpn_reactor_kernels.geometry import (
 
 from scpn_mif_maglif_core.configuration import DeviceConfiguration
 from scpn_mif_maglif_core.errors import DeviceGeometryError
-from scpn_mif_maglif_core.geometry.device import MM_PER_M, DeviceGeometry
+from scpn_mif_maglif_core.geometry.device import M_PER_MM, DeviceGeometry
 
 MODEL_SCHEMA: Final = "scpn.maglif-3d-model.v1"
 MODEL_SCHEMA_VERSION: Final = "1.0.0"
@@ -251,14 +251,14 @@ def build_device_model(
         raise DeviceGeometryError(str(exc)) from exc
     _require_envelope(configuration, geometry)
     liner = configuration.liner
-    outer = liner.outer_radius_mm * MM_PER_M
-    bore = (liner.outer_radius_mm - liner.wall_thickness_mm) * MM_PER_M
-    half = liner.length_mm * MM_PER_M / 2.0
-    window = geometry.entrance_window_thickness_mm * MM_PER_M
-    coil_inner = geometry.coil_inner_radius_mm * MM_PER_M
-    coil_outer = geometry.coil_outer_radius_mm * MM_PER_M
-    coil_half = geometry.coil_length_mm * MM_PER_M / 2.0
-    offset = geometry.coil_separation_mm * MM_PER_M / 2.0
+    outer = liner.outer_radius_mm * M_PER_MM
+    bore = (liner.outer_radius_mm - liner.wall_thickness_mm) * M_PER_MM
+    half = liner.length_mm * M_PER_MM / 2.0
+    window = geometry.entrance_window_thickness_mm * M_PER_MM
+    coil_inner = geometry.coil_inner_radius_mm * M_PER_MM
+    coil_outer = geometry.coil_outer_radius_mm * M_PER_MM
+    coil_half = geometry.coil_length_mm * M_PER_MM / 2.0
+    offset = geometry.coil_separation_mm * M_PER_MM / 2.0
     bodies = (
         (
             BODY_FUEL_COLUMN,

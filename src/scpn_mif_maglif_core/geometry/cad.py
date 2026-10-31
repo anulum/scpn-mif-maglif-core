@@ -43,7 +43,7 @@ from scpn_reactor_kernels.geometry import TriangleMesh
 
 from scpn_mif_maglif_core.configuration import DeviceConfiguration
 from scpn_mif_maglif_core.errors import DeviceGeometryError
-from scpn_mif_maglif_core.geometry.device import MM_PER_M, DeviceGeometry
+from scpn_mif_maglif_core.geometry.device import M_PER_MM, DeviceGeometry
 from scpn_mif_maglif_core.geometry.model import (
     BODY_COIL_DOWNSTREAM,
     BODY_COIL_UPSTREAM,
@@ -250,14 +250,14 @@ def build_device_cad(
     """
     reference = build_device_model(configuration, geometry, segments)
     liner = configuration.liner
-    outer = liner.outer_radius_mm * MM_PER_M
-    bore = (liner.outer_radius_mm - liner.wall_thickness_mm) * MM_PER_M
-    half = liner.length_mm * MM_PER_M / 2.0
-    window = geometry.entrance_window_thickness_mm * MM_PER_M
-    coil_inner = geometry.coil_inner_radius_mm * MM_PER_M
-    coil_outer = geometry.coil_outer_radius_mm * MM_PER_M
-    coil_half = geometry.coil_length_mm * MM_PER_M / 2.0
-    offset = geometry.coil_separation_mm * MM_PER_M / 2.0
+    outer = liner.outer_radius_mm * M_PER_MM
+    bore = (liner.outer_radius_mm - liner.wall_thickness_mm) * M_PER_MM
+    half = liner.length_mm * M_PER_MM / 2.0
+    window = geometry.entrance_window_thickness_mm * M_PER_MM
+    coil_inner = geometry.coil_inner_radius_mm * M_PER_MM
+    coil_outer = geometry.coil_outer_radius_mm * M_PER_MM
+    coil_half = geometry.coil_length_mm * M_PER_MM / 2.0
+    offset = geometry.coil_separation_mm * M_PER_MM / 2.0
     try:
         assembly = BrepAssembly(
             (

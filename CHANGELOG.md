@@ -31,6 +31,14 @@ SCPN MIF MagLIF Core — CHANGELOG
 
 ### Changed
 
+- The physical constants of the drive model name their editions: the vacuum
+  permeability is the CODATA 2018 value (CODATA 2022 is 6.8e-10 lower
+  relative), and the beryllium and aluminium densities are declared values;
+  the filed chapter names beryllium liners but prints no density. A test
+  binds the permeability edition.
+- The millimetre-to-metre factor is renamed `M_PER_MM` (it was `MM_PER_M`,
+  which reads as the inverse of its value 1e-3) in `geometry` and `physics`.
+  The value is unchanged.
 - `scpn_mif_maglif_core.observability` is now a package with one module per
   responsibility — vocabulary, catalogue binding, frames, clocks, signals and
   channels, plan composition, record parsing — behind the unchanged public

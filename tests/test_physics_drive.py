@@ -232,3 +232,14 @@ def test_the_anchor_liner_mass_is_of_the_order_the_family_uses() -> None:
         BERYLLIUM_DENSITY_KG_M3,
     )
     assert 5.0e-5 < state.liner_mass_kg < 5.0e-4
+
+
+def test_the_vacuum_permeability_is_the_documented_edition() -> None:
+    """MU0 is the CODATA 2018 value; CODATA 2022 lies 6.8e-10 below it.
+
+    The 2022 reference is the value SciPy 1.18.1 serves and the current NIST
+    table prints (1.256 637 061 27e-6).
+    """
+    assert MU0 == 1.25663706212e-6
+    offset = (MU0 - 1.25663706127e-6) / 1.25663706127e-6
+    assert 6.7e-10 < offset < 6.9e-10

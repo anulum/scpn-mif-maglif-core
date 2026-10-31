@@ -44,7 +44,7 @@ GEOMETRY_FIELDS: Final = (
 )
 
 #: Metres per millimetre; this family declares its hardware in millimetres.
-MM_PER_M: Final = 1.0e-3
+M_PER_MM: Final = 1.0e-3
 
 
 def _positive(name: str, value: float) -> float:
