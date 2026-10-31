@@ -12,57 +12,6 @@ SCPN MIF MagLIF Core — CHANGELOG
 
 ## [Unreleased]
 
-### Fixed
-
-- `build_device_cad` raises `CadUnavailableError` when the optional CAD
-  back-end is missing, as documented; it previously re-raised it as
-  `DeviceGeometryError`.
-
-### Security
-
-- `configuration_from_bytes` refuses duplicate JSON members and any document
-  that is not byte-for-byte the canonical serialisation, as the
-  diagnostic-plan and plan-envelope parsers already did; a duplicate member
-  was resolved last-wins.
-- All three public parsers report JSON nested deeper than the decoder can
-  follow as their own error type; a `RecursionError` previously escaped
-  them. Property and fuzz tests cover arbitrary bytes, single-byte
-  mutations, field substitutions and overflowing number literals.
-
-### Changed
-
-- The physical constants of the drive model name their editions: the vacuum
-  permeability is the CODATA 2018 value (CODATA 2022 is 6.8e-10 lower
-  relative), and the beryllium and aluminium densities are declared values;
-  the filed chapter names beryllium liners but prints no density. A test
-  binds the permeability edition.
-- The millimetre-to-metre factor is renamed `M_PER_MM` (it was `MM_PER_M`,
-  which reads as the inverse of its value 1e-3) in `geometry` and `physics`.
-  The value is unchanged.
-- `scpn_mif_maglif_core.observability` is now a package with one module per
-  responsibility — vocabulary, catalogue binding, frames, clocks, signals and
-  channels, plan composition, record parsing — behind the unchanged public
-  import path. The 34 public names, canonical plan bytes and refusal
-  behaviour are unchanged.
-
-- The documentation gate reads only files git would publish, so a
-  git-ignored private tree is never link-checked (it failed the gate locally
-  while passing in CI, where that tree is absent). Hooks without their own
-  stage list run before a commit and before a push only; commit-msg runs the
-  trailer guard alone.
-- Local and hosted gates check the same cohorts: `make typecheck` now checks
-  `src/` as CI does, `make test` measures `src/` as CI does, `conftest.py`
-  joins the typed cohort everywhere, and `make validate` runs the workflow
-  audit. A parity test binds the make targets and the preflight plan to the
-  hosted workflows, and an enrollment test maps every tracked file to exactly
-  one gated surface.
-
-- Install every CI dependency from hash-locked requirement sets with
-  `--require-hashes`: the development toolchain, the CAD extra, the audit
-  and inventory tools, and the first-party kernel library by source-archive
-  digest at the commit pinned in `pyproject.toml`. `make lock` regenerates
-  the sets; the package itself installs with `--no-deps`. Toolchain, action
-  and interpreter pins move to their newest releases.
 
 ### Added
 
@@ -164,6 +113,39 @@ SCPN MIF MagLIF Core — CHANGELOG
 
 ### Changed
 
+- The physical constants of the drive model name their editions: the vacuum
+  permeability is the CODATA 2018 value (CODATA 2022 is 6.8e-10 lower
+  relative), and the beryllium and aluminium densities are declared values;
+  the filed chapter names beryllium liners but prints no density. A test
+  binds the permeability edition.
+- The millimetre-to-metre factor is renamed `M_PER_MM` (it was `MM_PER_M`,
+  which reads as the inverse of its value 1e-3) in `geometry` and `physics`.
+  The value is unchanged.
+- `scpn_mif_maglif_core.observability` is now a package with one module per
+  responsibility — vocabulary, catalogue binding, frames, clocks, signals and
+  channels, plan composition, record parsing — behind the unchanged public
+  import path. The 34 public names, canonical plan bytes and refusal
+  behaviour are unchanged.
+
+- The documentation gate reads only files git would publish, so a
+  git-ignored private tree is never link-checked (it failed the gate locally
+  while passing in CI, where that tree is absent). Hooks without their own
+  stage list run before a commit and before a push only; commit-msg runs the
+  trailer guard alone.
+- Local and hosted gates check the same cohorts: `make typecheck` now checks
+  `src/` as CI does, `make test` measures `src/` as CI does, `conftest.py`
+  joins the typed cohort everywhere, and `make validate` runs the workflow
+  audit. A parity test binds the make targets and the preflight plan to the
+  hosted workflows, and an enrollment test maps every tracked file to exactly
+  one gated surface.
+
+- Install every CI dependency from hash-locked requirement sets with
+  `--require-hashes`: the development toolchain, the CAD extra, the audit
+  and inventory tools, and the first-party kernel library by source-archive
+  digest at the commit pinned in `pyproject.toml`. `make lock` regenerates
+  the sets; the package itself installs with `--no-deps`. Toolchain, action
+  and interpreter pins move to their newest releases.
+
 - Studio portfolio descriptor schema ratified at version 1.1.0 after
   downstream review, before any consumer adoption (1.0.0 superseded
   unconsumed): canonical JSON Schema published in-repository with a strict
@@ -172,3 +154,20 @@ SCPN MIF MagLIF Core — CHANGELOG
   capability item shape, and a machine-protection object (independent
   final-veto owner with availability `not_assessed`) replacing the former
   boolean flag.
+
+### Fixed
+
+- `build_device_cad` raises `CadUnavailableError` when the optional CAD
+  back-end is missing, as documented; it previously re-raised it as
+  `DeviceGeometryError`.
+
+### Security
+
+- `configuration_from_bytes` refuses duplicate JSON members and any document
+  that is not byte-for-byte the canonical serialisation, as the
+  diagnostic-plan and plan-envelope parsers already did; a duplicate member
+  was resolved last-wins.
+- All three public parsers report JSON nested deeper than the decoder can
+  follow as their own error type; a `RecursionError` previously escaped
+  them. Property and fuzz tests cover arbitrary bytes, single-byte
+  mutations, field substitutions and overflowing number literals.
