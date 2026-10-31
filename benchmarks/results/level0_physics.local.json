@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-31T05:46:46.570988+00:00",
+  "label": "local",
+  "parameters": {
+    "points": 20000,
+    "record_points": 2000,
+    "repeats": 20,
+    "warmup": 3
+  },
+  "platform": {
+    "commit": "af659e3e5220b78748e7abcfbd67e7c10f49cdb8",
+    "cpu_model": "11th Gen Intel(R) Core(TM) i5-11600K @ 3.90GHz",
+    "isolated_cores": false,
+    "load_average_1min_at_start": "3.04",
+    "machine": "x86_64",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "results": [
+    {
+      "backend": "python_floor",
+      "name": "closed_forms",
+      "stats": {
+        "max_us_per_point": 3.2631029,
+        "mean_us_per_point": 2.3045659775000003,
+        "min_us_per_point": 2.11055825,
+        "p50_us_per_point": 2.27847985,
+        "p95_us_per_point": 2.4943471,
+        "p99_us_per_point": 3.2631029,
+        "throughput_points_per_s": 438889.11284425005
+      },
+      "status": "measured"
+    },
+    {
+      "backend": "rust_native",
+      "name": "closed_forms",
+      "stats": null,
+      "status": "unavailable: this package has no native crate; the level-0 kernels use + - * /, the constant pi and one real power evaluated by the shared library's deterministic power kernel, and the native decision of audit plan Q01 awaits the owner"
+    },
+    {
+      "backend": "python_floor",
+      "name": "level0_record",
+      "stats": {
+        "max_us_per_point": 41.340443,
+        "mean_us_per_point": 33.68128285,
+        "min_us_per_point": 30.0323805,
+        "p50_us_per_point": 33.530072999999994,
+        "p95_us_per_point": 40.670175,
+        "p99_us_per_point": 41.340443,
+        "throughput_points_per_s": 29823.97324336276
+      },
+      "status": "measured"
+    },
+    {
+      "backend": "rust_native",
+      "name": "level0_record",
+      "stats": null,
+      "status": "unavailable: this package has no native crate; the level-0 kernels use + - * /, the constant pi and one real power evaluated by the shared library's deterministic power kernel, and the native decision of audit plan Q01 awaits the owner"
+    }
+  ],
+  "schema": "scpn-mif-maglif-core.level0-physics-benchmark.v1"
+}
