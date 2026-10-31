@@ -70,8 +70,8 @@ SCHEMA: Final = "scpn-mif-maglif-core.level0-physics-benchmark.v1"
 NATIVE_STATUS: Final = (
     "unavailable: this package has no native crate; the level-0 kernels use "
     "+ - * /, the constant pi and one real power evaluated by the shared "
-    "library's deterministic power kernel, and the native decision of audit "
-    "plan Q01 awaits the owner"
+    "library's deterministic power kernel, and the decision on a native "
+    "backend is open with the project owner"
 )
 
 
