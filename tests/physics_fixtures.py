@@ -39,8 +39,8 @@ from scpn_mif_maglif_core.physics import BERYLLIUM_DENSITY_KG_M3, DriveInputs
 
 REGISTRY = RegistryBinding(version="1.0.0", digest_sha256="0" * 64)
 
-#: Liner geometry printed by the filed chapter: a 10-mm tall, 5-mm outer
-#: diameter, 0.5-mm wall thickness cylinder.
+#: Liner geometry printed by the filed chapter (PDF p. 9): a 10-mm tall,
+#: 5-mm outer diameter, 0.5-mm wall thickness cylinder.
 ANCHOR_OUTER_DIAMETER_MM = 5.0
 ANCHOR_OUTER_RADIUS_MM = ANCHOR_OUTER_DIAMETER_MM / 2.0
 ANCHOR_WALL_THICKNESS_MM = 0.5
@@ -49,14 +49,15 @@ ANCHOR_LENGTH_MM = 10.0
 #: operands are exactly representable and so is the quotient.
 ANCHOR_ASPECT_RATIO = 5.0
 
-#: Operating point of the first integrated experiment, printed together:
-#: 10 T axial field, 0.5 kJ preheat deposited, 18 MA peak load current.
+#: Operating point of the first integrated experiment, printed together
+#: (PDF p. 10): 10 T axial field, 0.5 kJ preheat deposited, 18 MA peak
+#: load current.
 ANCHOR_AXIAL_FIELD_T = 10.0
 ANCHOR_PREHEAT_ENERGY_KJ = 0.5
 ANCHOR_PEAK_CURRENT_MA = 18.0
 
 #: Printed as a range rather than a value: the peak implosion velocity is
-#: given as 70 to 100 kilometres per second.
+#: given as 70 to 100 kilometres per second (PDF p. 9).
 ANCHOR_VELOCITY_WINDOW_KM_S = (70.0, 100.0)
 #: Declared from inside that window.
 ANCHOR_IMPLOSION_VELOCITY_KM_S = 85.0

@@ -113,6 +113,8 @@ SCPN MIF MagLIF Core — CHANGELOG
 
 ### Changed
 
+- The anchor values are bound to pages of the filed SAND2021-3239B PDF
+  (target and velocity range on p. 9, operating point on p. 10).
 - The physical constants of the drive model name their editions: the vacuum
   permeability is the CODATA 2018 value (CODATA 2022 is 6.8e-10 lower
   relative), and the beryllium and aluminium densities are declared values;

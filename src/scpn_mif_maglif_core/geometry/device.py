@@ -12,7 +12,7 @@ The configuration carries the liner: its outer radius, its wall and its
 length. Those are read from there and not repeated. What this envelope
 adds is what the filed chapter says surrounds the liner — the pair of
 "Helmholtz-like coils" that apply the axial field, and the "thin plastic
-foil" the laser enters through.
+foil" the laser enters through (both PDF p. 9 of the filed chapter).
 
 **"Helmholtz-like" is taken at its word.** A true Helmholtz pair has its
 two coils separated by exactly one coil radius, which makes the field

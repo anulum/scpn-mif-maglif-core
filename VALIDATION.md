@@ -234,15 +234,16 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
 Anchoring — every configuration field is a printed value:
 
 - **Printed** by the filed chapter SAND2021-3239B: the liner is 10 mm
-  tall, 5 mm in outer diameter and 0.5 mm in wall; the first integrated
-  experiment used a 10 T axial field, 0.5 kJ of deposited preheat and
-  18 MA of peak load current. All six reach the composed record, and the
+  tall, 5 mm in outer diameter and 0.5 mm in wall (PDF p. 9); the first
+  integrated experiment used a 10 T axial field, 0.5 kJ of deposited
+  preheat and 18 MA of peak load current (PDF p. 10). Page numbers are
+  those of the filed PDF. All six reach the composed record, and the
   test reads them out of it.
 - The aspect ratio those two printed liner numbers give is **exactly
   5.0**, asserted as an equality: the outer radius is half the printed
   diameter and both operands and the quotient are exactly representable.
 - **Printed as a range, not a value**: the peak implosion velocity, 70 to
-  100 kilometres per second. A value is declared from inside it and a
+  100 kilometres per second (PDF p. 9). A value is declared from inside it and a
   separate test asserts it is inside.
 - **Declared, and said to be declared**: the liner material density, the
   convergence ratio and the adiabatic index.

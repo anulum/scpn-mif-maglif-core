@@ -29,8 +29,8 @@ are recorded as declared.
 bore encloses, which is what the fuel actually receives per unit volume.
 
 Reference for the arrangement and for the anchor: the public chapter
-SAND2021-3239B (Slutz a co-author), which prints a MagLIF target and the
-operating point of the first integrated experiment. It is a RELATED
+SAND2021-3239B (Slutz a co-author), which prints a MagLIF target (PDF p. 9)
+and the operating point of the first integrated experiment (PDF p. 10). It is a RELATED
 chapter, not the cited 2010 paper, which is not freely obtainable.
 """
 
@@ -50,7 +50,7 @@ from scpn_mif_maglif_core.parameters import require_positive
 MU0: Final = 1.25663706212e-6
 #: Density of beryllium in kilograms per cubic metre, declared; the material
 #: MagLIF liners are usually made of. The filed chapter names beryllium
-#: liners but prints no density.
+#: liners (PDF p. 10) but prints no density.
 BERYLLIUM_DENSITY_KG_M3: Final = 1850.0
 #: Density of aluminium in kilograms per cubic metre, declared; the other
 #: liner material in common use. No anchor depends on it.
@@ -70,8 +70,8 @@ class DriveInputs:
         Mass density of the liner material; strictly positive.
     implosion_velocity_km_s
         Peak implosion velocity; strictly positive. The filed chapter
-        prints a range of 70 to 100 kilometres per second, so a value is
-        declared from it rather than derived.
+        prints a range of 70 to 100 kilometres per second (PDF p. 9), so a
+        value is declared from it rather than derived.
 
     Raises
     ------
